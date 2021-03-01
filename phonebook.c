@@ -137,6 +137,8 @@ static int delete_contact(void) {
 		if (strcmp(con->name, name) == 0) {
 			found = true;
 			list_del(i);
+			kfree(con->name);
+			kfree(con->email);
 			kfree(con);
 			break;
 		}
